@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat Emotion Analyzer</title>
+</head>
+<body>
+    <h1>Chat Emotion Analyzer</h1>
+    <form action="{% url 'analyze_text' %}" method="POST">
+        {% csrf_token %}
+        <textarea name="user_text" rows="5" cols="60" placeholder="Paste chat text here"></textarea><br>
+        <button type="submit">Analyze Emotion</button>
+    </form>
+</body>
+</html>

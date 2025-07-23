@@ -1,0 +1,14 @@
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="image" required>
+    <button type="submit">Detect Emotion</button>
+</form>
+
+<!-- {% if results %}
+    <h2>Results:</h2>
+    <ul>
+        {% for r in results %}
+            <li>{{ r.emotion }}: {{ r.score|floatformat:2 }}</li>
+        {% endfor %}
+    </ul>
+{% endif %} -->

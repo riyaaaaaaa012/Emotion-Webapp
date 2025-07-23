@@ -1,0 +1,16 @@
+<h2>Emotion Detection Results</h2>
+
+{% if results %}
+  <p><strong>Dominant emotion:</strong> {{ results.dominant.emotion|title }} ({{ results.dominant.score|floatformat:2 }})</p>
+  
+  <h3>All detected emotions:</h3>
+  <ul>
+    {% for emotion, score in results.all_emotions.items %}
+      <li>{{ emotion|title }}: {{ score|floatformat:2 }}</li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>No faces detected.</p>
+{% endif %}
+
+<a href="{% url 'detect_emotion' %}">Analyze another image</a>

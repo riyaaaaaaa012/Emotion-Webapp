@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Emotion Analysis Result</title>
+</head>
+<body>
+    <h1>Results for: "{{ user_input }}"</h1>
+    <ul>
+        {% for emotion in results %}
+            <li>{{ emotion.label }}: {{ emotion.score|floatformat:2 }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'chat_home' %}">Analyze another text</a>
+</body>
+</html>
